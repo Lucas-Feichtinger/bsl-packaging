@@ -1,0 +1,28 @@
+.translate-on-screen {
+   animation: scrollAnimation 0.8s linear;
+   animation-delay: inherit;
+}
+
+.test-two {
+   float: right;
+   opacity: 0;
+}
+
+@keyframes scrollAnimation {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
+}
+
+/* Add this CSS in your component's CSS file or a global styles file */
+.visible {
+   opacity: 0;
+   transition: opacity 0.5s ease-in-out; /* Customize animation duration and timing function */
+}
+
+.visible.show {
+   opacity: 1;
+}

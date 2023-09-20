@@ -1,0 +1,30 @@
+.animated-text {
+   position: relative;
+   font-size: 24px;
+   color: #333;
+   text-align: center;
+   overflow: hidden;
+}
+
+.animated-text::before {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 50%; /* Start from the middle */
+   transform: translateX(-50%);
+   width: 0; /* Start with no width */
+   height: 2px; /* Set the underline height */
+   background-color: #475569; /* Change to your desired underline color */
+   transition: width 0.5s ease; /* Animation duration and easing */
+}
+
+.animated-text:hover::before {
+   width: 100%; /* Expand to full width on hover */
+}
+
+.animated-text:hover {
+   text-shadow: 0 0 4px rgba(112, 128, 144, 0.15),
+      0 0 8px rgba(112, 128, 144, 0.15), 0 0 12px rgba(112, 128, 144, 0.15),
+      0 0 16px rgba(112, 128, 144, 0.15), 0 0 20px rgba(112, 128, 144, 0.15),
+      0 0 24px rgba(112, 128, 144, 0.15), 0 0 28px rgba(112, 128, 144, 0.15);
+}
