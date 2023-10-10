@@ -3,9 +3,6 @@
    width: 200px;
    background-size: 200px 200px;
    background-image: url('../../../../../assets/cardboard-box.png');
-   animation: scrollAnimation 1.1s linear infinite;
-   animation-play-state: paused;
-   animation-delay: inherit;
 }
 
 @keyframes scrollAnimation {

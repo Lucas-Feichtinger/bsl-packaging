@@ -1,30 +1,25 @@
-import {
-   AnimationBuilder,
-   AnimationPlayer,
-   style,
-   animate,
-} from '@angular/animations'
-import { Directive, ElementRef, Input, OnInit } from '@angular/core'
+import { AnimationFactory } from '@angular/animations'
+import { Directive, ElementRef, Input, OnInit, inject } from '@angular/core'
 
 @Directive({
    standalone: true,
    selector: '[appIntersectionObserver]',
 })
 export class IntersectionObserverDirective implements OnInit {
-   @Input() intersectionClass = 'visible'
-   private observer: IntersectionObserver | undefined
-   private animationPlayer: AnimationPlayer | undefined
+   private el = inject(ElementRef)
+   // Possible input 'Top, Right, Bottom, Left' margin
+   @Input() rootMargin = '0px'
 
-   constructor(
-      private el: ElementRef,
-      private animationBuilder: AnimationBuilder
-   ) {}
+   @Input() AnimationIn: AnimationFactory | undefined = undefined
+   @Input() AnimationOut: AnimationFactory | undefined = undefined
+
+   private observer: IntersectionObserver | undefined
 
    ngOnInit() {
       // Intersection Observer configuration options
       const options = {
          root: null,
-         rootMargin: '0px',
+         rootMargin: this.rootMargin,
          threshold: 0.5, // Adjust this threshold as needed
       }
 
@@ -33,22 +28,18 @@ export class IntersectionObserverDirective implements OnInit {
          entries.forEach((entry) => {
             if (entry.isIntersecting) {
                // Play the fade-in animation
-               this.animationPlayer = this.animationBuilder
-                  .build([
-                     style({ opacity: 0 }),
-                     animate('300ms', style({ opacity: 1 })), // Adjust animation duration as needed
-                  ])
-                  .create(this.el.nativeElement)
-               this.animationPlayer.play()
+               const animationPlayer = this.AnimationIn?.create(
+                  this.el.nativeElement
+               )
+
+               animationPlayer?.play()
             } else {
-               // Play the fade-out animation
-               this.animationPlayer = this.animationBuilder
-                  .build([
-                     style({ opacity: 1 }),
-                     animate('300ms', style({ opacity: 0 })), // Adjust animation duration as needed
-                  ])
-                  .create(this.el.nativeElement)
-               this.animationPlayer.play()
+               // Play the fade-in animation
+               const animationPlayer = this.AnimationOut?.create(
+                  this.el.nativeElement
+               )
+
+               animationPlayer?.play()
             }
          })
       }, options)

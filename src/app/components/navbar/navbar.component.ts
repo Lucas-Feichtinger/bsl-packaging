@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core'
 import { ActivatedRoute, RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
+// Initialization for ES Users
+import { Collapse, initTE } from 'tw-elements'
 
 @Component({
    standalone: true,
@@ -15,4 +17,8 @@ import { CommonModule } from '@angular/common'
 })
 export class NavbarComponent {
    public route = inject(ActivatedRoute)
+
+   ngOnInit() {
+      initTE({ Collapse })
+   }
 }
