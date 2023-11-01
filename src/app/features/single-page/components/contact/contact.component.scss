@@ -1,0 +1,15 @@
+:host {
+   .focused {
+      top: -1.5rem;
+      transform: scale(0.8);
+   }
+
+   input:-webkit-autofill,
+   input:-webkit-autofill:hover,
+   input:-webkit-autofill:focus,
+   input:-webkit-autofill:active {
+      /* change the white to any color */
+      -webkit-text-fill-color: var(--light-color-1) !important;
+      background-color: transparent;
+   }
+}
