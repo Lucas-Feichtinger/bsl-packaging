@@ -1,0 +1,8 @@
+<!-- language-switcher.component.html -->
+<select
+   [(ngModel)]="selectedLanguage"
+   (ngModelChange)="changeLanguage()">
+   <option value="en">English</option>
+   <option value="de">German</option>
+   <!-- Add more language options as needed -->
+</select>
