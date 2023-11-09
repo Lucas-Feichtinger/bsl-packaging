@@ -41,3 +41,17 @@ a {
    // box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
    //    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+
+/* Mobile styles (max-width: 767px) */
+@media screen and (max-width: 767px) {
+   .mobile-hidden {
+      display: none;
+   }
+}
+
+/* Desktop styles (min-width: 768px) */
+@media screen and (min-width: 768px) {
+   .desktop-hidden {
+      display: none;
+   }
+}

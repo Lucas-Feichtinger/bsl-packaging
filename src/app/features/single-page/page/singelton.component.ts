@@ -7,6 +7,7 @@ import { IntersectionObserverDirective } from '../../../directives/intersection-
 import { NavbarComponent } from '../../../components/navbar/navbar.component'
 import { ContactComponent } from '../components'
 import { ProductsComponent } from '../components/products/products.component'
+import { TranslateModule } from '@ngx-translate/core'
 
 @Component({
    standalone: true,
@@ -19,6 +20,7 @@ import { ProductsComponent } from '../components/products/products.component'
       NavbarComponent,
       ContactComponent,
       ProductsComponent,
+      TranslateModule,
       // Directives
    ],
    selector: 'app-singelton',

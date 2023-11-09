@@ -1,21 +1,11 @@
-<!-- https://tailwind-elements.com/docs/standard/navigation/hers/ -->
-
-<!-- Main navigation container -->
 <nav
-   class="relative bg-[var(--dark-color-2-80)] text-[var(--light-color-1)] flex w-full flex-nowrap items-center justify-between lg:bg-transparent py-2 lg:flex-wrap lg:justify-start lg:py-4"
-   data-te-navbar-ref>
-   <div class="flex w-full flex-wrap items-center justify-between px-3">
-      <div class="ml-2">
-         <a
-            class="text-xl"
-            href="#"
-            >Navbar</a
-         >
-      </div>
-      <!-- Hamburger button for mobile view -->
+   class="relative text-[var(--light-color-1)] flex w-full flex-nowrap items-center justify-between lg:bg-transparent lg:flex-wrap lg:justify-start lg:py-4">
+   <div class="flex w-full flex-wrap items-center justify-between">
+      <div class="ml-2"></div>
       <button
-         class="block border-0 bg-transparent px-2 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
+         class="bg-[var(--dark-color-2)] block border-0 px-2 text-neutral-500 hover:no-underline hover:shadow-none py-2 focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
          type="button"
+         (click)="toggleNavbar()"
          data-te-collapse-init
          data-te-target="#navbarSupportedContent3"
          aria-controls="navbarSupportedContent3"
@@ -35,61 +25,61 @@
             </svg>
          </span>
       </button>
-
-      <!-- Collapsible navbar container -->
-      <div
-         class="!visible hidden basis-[100%] items-end lg:mt-0 lg:!flex lg:basis-auto"
-         id="navbarSupportedContent3"
-         data-te-collapse-item>
-         <!-- Left links -->
-         <div
-            class="list-style-none mr-auto flex flex-col pl-0 lg:mt-1 lg:flex-row"
-            data-te-navbar-nav-ref>
-            <!-- Home link -->
-            <div
-               class="lg:bg-[var(--dark-color-2)] my-4 pl-2 lg:my-0 lg:p-2 lg:ml-5 lg:mr-5"
-               data-te-nav-item-ref>
-               <a
-                  class="block w-full p-0 lg:px-2 underline decoration-2 underline-offset-1 font-semibold"
-                  href="#"
-                  data-te-nav-link-ref
-                  >About</a
-               >
-            </div>
-            <!-- Features link -->
-            <div
-               class="lg:bg-[var(--dark-color-2)] mb-4 pl-2 lg:mb-0 lg:p-2 lg:ml-5 lg:mr-5"
-               data-te-nav-item-ref>
-               <a
-                  class="block w-full p-0 lg:px-2 underline decoration-2 underline-offset-1 font-semibold"
-                  href="#"
-                  data-te-nav-link-ref
-                  >Features</a
-               >
-            </div>
-            <!-- Pricing link -->
-            <div
-               class="lg:bg-[var(--dark-color-2)] mb-4 pl-2 lg:mb-0 lg:p-2 lg:ml-5 lg:mr-5"
-               data-te-nav-item-ref>
-               <a
-                  class="block w-full p-0 lg:px-2 underline decoration-2 underline-offset-1 font-semibold"
-                  href="#"
-                  data-te-nav-link-ref
-                  >Pricing</a
-               >
-            </div>
-            <!-- Disabled link -->
-            <div
-               class="lg:bg-[var(--dark-color-2)] mb-4 pl-2 lg:mb-0 lg:p-2 lg:ml-5 lg:mr-5"
-               data-te-nav-link-ref>
-               <a
-                  class="block w-full p-0 lg:px-2 underline decoration-2 underline-offset-1 font-semibold"
-                  href="#"
-                  data-te-nav-link-ref
-                  >Contact</a
-               >
-            </div>
-         </div>
-      </div>
    </div>
 </nav>
+
+<div
+   class="navbar-container hide-navbar flex"
+   [class.is-active]="navbarState">
+   <div class="firm-logo"></div>
+   <div class="flex-1">
+      <div
+         class="lg:bg-[var(--dark-color-2)] mb-4 pl-4 lg:mb-0 lg:p-2 lg:ml-5 lg:mr-5">
+         <a
+            class="block w-full p-0 lg:px-2 underline decoration-1 underline-offset-1 font-semibold"
+            href="#">
+            <i class="fa-solid fa-globe"></i>
+            <span class="pl-2">Über Uns</span>
+         </a>
+      </div>
+      <div
+         class="lg:bg-[var(--dark-color-2)] mb-4 pl-4 lg:mb-0 lg:p-2 lg:ml-5 lg:mr-5">
+         <a
+            class="block w-full p-0 lg:px-2 underline decoration-1 underline-offset-1 font-semibold"
+            href="#">
+            <i class="fa-solid fa-boxes-stacked"></i>
+            <span class="pl-2">Produkte</span>
+         </a>
+      </div>
+      <div
+         class="lg:bg-[var(--dark-color-2)] mb-4 pl-4 lg:mb-0 lg:p-2 lg:ml-5 lg:mr-5">
+         <a
+            class="block w-full p-0 lg:px-2 underline decoration-1 underline-offset-1 font-semibold"
+            href="#">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span class="pl-2">Dropshipping</span>
+         </a>
+      </div>
+      <div
+         class="lg:bg-[var(--dark-color-2)] mb-4 pl-4 lg:mb-0 lg:p-2 lg:ml-5 lg:mr-5">
+         <a
+            class="block w-full p-0 lg:px-2 underline decoration-1 underline-offset-1 font-semibold"
+            href="#">
+            <i class="fa-regular fa-address-card"></i>
+            <span class="pl-2">Contact</span>
+         </a>
+      </div>
+   </div>
+
+   <div class="desktop-hidden">
+      <div class="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
+         <p class="mb-4 flex items-center justify-center md:justify-start">
+            <a href="mailto:info@bslpackaging.com">info&#64;bslpackaging.com</a>
+         </p>
+         <span>© 2023 Copyright:</span>
+         <span class="font-semibold text-neutral-600 dark:text-neutral-400">
+            BSL-Packaging
+         </span>
+      </div>
+   </div>
+</div>

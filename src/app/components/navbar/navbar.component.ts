@@ -21,4 +21,9 @@ export class NavbarComponent implements OnInit {
    ngOnInit() {
       initTE({ Collapse })
    }
+   public navbarState = false
+
+   toggleNavbar() {
+      this.navbarState = !this.navbarState
+   }
 }

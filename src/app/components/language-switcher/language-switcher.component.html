@@ -1,8 +1,9 @@
-<!-- language-switcher.component.html -->
-<select
-   [(ngModel)]="selectedLanguage"
-   (ngModelChange)="changeLanguage()">
-   <option value="en">English</option>
-   <option value="de">German</option>
-   <!-- Add more language options as needed -->
-</select>
+<div class="switch">
+   <input
+      id="language-toggle"
+      class="check-toggle check-toggle-round-flat"
+      type="checkbox" />
+   <label for="language-toggle"></label>
+   <span class="on">BN</span>
+   <span class="off">EN</span>
+</div>
