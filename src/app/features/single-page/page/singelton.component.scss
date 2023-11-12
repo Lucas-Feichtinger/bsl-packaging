@@ -31,7 +31,7 @@
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
-   background-image: url('../../../../assets/old_city-skyline-leonardo-ai.jpg');
+   background-image: url('../../../../assets/old_city-skyline-leonardo-ai-dark.jpg');
    width: 100%;
    height: 50vh;
 }
@@ -39,4 +39,15 @@
 .contact-button {
    background-color: var(--main-color);
    color: var(--light-color-1);
+}
+
+.overflow {
+   overflow: visible;
+   width: fit-content;
+   word-break: keep-all;
+   white-space: nowrap;
+}
+
+.test {
+   max-width: 60%;
 }
