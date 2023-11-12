@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms'
 @Component({
    selector: 'app-language-switcher',
    templateUrl: './language-switcher.component.html',
-   styleUrls: ['./language-switcher.component.css'],
+   styleUrls: ['./language-switcher.component.scss'],
    standalone: true,
    imports: [FormsModule],
 })

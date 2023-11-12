@@ -1,3 +1,6 @@
 {
-   "test": "Test is working"
+   "contact": "Contact",
+   "navbar-about": "About us",
+   "navbar-products": "Products",
+   "navbar-dropshipping": "Dropshipping"
 }

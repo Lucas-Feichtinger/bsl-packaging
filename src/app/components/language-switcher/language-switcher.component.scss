@@ -2,16 +2,16 @@
    .switch {
       position: relative;
       display: inline-block;
-      margin: 0 5px;
+      height: 100%;
    }
 
    .switch > span {
       position: absolute;
-      top: 14px;
+      top: 0.55rem;
       pointer-events: none;
       font-family: 'Helvetica', Arial, sans-serif;
       font-weight: bold;
-      font-size: 12px;
+      font-size: 1.2rem;
       text-transform: uppercase;
       text-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
       width: 50%;
@@ -28,13 +28,13 @@
 
    .switch > span.on {
       left: 0;
-      padding-left: 2px;
+      padding-left: 0.2rem;
       color: #1f2021;
    }
 
    .switch > span.off {
       right: 0;
-      padding-right: 4px;
+      padding-right: 0.2rem;
       color: #fff;
    }
 
@@ -57,7 +57,7 @@
    input.check-toggle-round-flat + label {
       padding: 2px;
       width: 97px;
-      height: 35px;
+      height: 100%;
       background-color: #1f2021;
    }
    input.check-toggle-round-flat + label:before,
@@ -79,15 +79,12 @@
       top: 4px;
       left: 4px;
       bottom: 4px;
-      width: 48px;
+      width: 44px;
       background-color: #fff;
       -webkit-transition: margin 0.2s;
       -moz-transition: margin 0.2s;
       -o-transition: margin 0.2s;
       transition: margin 0.2s;
-   }
-
-   input.check-toggle-round-flat:checked + label {
    }
 
    input.check-toggle-round-flat:checked + label:after {
