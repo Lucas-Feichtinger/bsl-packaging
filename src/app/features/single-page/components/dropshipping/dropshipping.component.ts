@@ -9,8 +9,8 @@ import { CommonModule } from '@angular/common'
       RouterModule,
       // Directives
    ],
-   selector: 'app-product-two',
-   templateUrl: './product.component.html',
-   styleUrls: ['./product.component.scss'],
+   selector: 'app-dropshipping',
+   templateUrl: './dropshipping.component.html',
+   styleUrls: ['./dropshipping.component.scss'],
 })
-export class ProductTwoComponent {}
+export class DropshippingComponent {}
