@@ -28,12 +28,14 @@
 
    .switch > span.on {
       left: 0;
+      top: 6px;
       padding-left: 0.2rem;
       color: #1f2021;
    }
 
    .switch > span.off {
       right: 0;
+      top: 6px;
       padding-right: 0.2rem;
       color: #fff;
    }
