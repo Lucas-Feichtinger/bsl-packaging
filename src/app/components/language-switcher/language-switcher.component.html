@@ -1,6 +1,8 @@
 <div class="switch">
    <input
       id="language-toggle"
+      [ngModel]="checkbox()"
+      (ngModelChange)="checkbox.set($event)"
       class="check-toggle check-toggle-round-flat px-2"
       type="checkbox" />
    <label for="language-toggle"></label>

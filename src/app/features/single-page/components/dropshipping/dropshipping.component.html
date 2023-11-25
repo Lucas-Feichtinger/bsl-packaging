@@ -1,44 +1,58 @@
-<div
-   class="block rounded-lg bg-[var(--dark-color-2)] px-6 py-6 text-[var(--light-color-1)] md:py-16 md:px-12">
-   <div class="flex flex-col gap-4 mb-2">
-      <p class="text-2xl font-bold text-shadow-1">Dropshipping</p>
-      <p class="text-lg leading-6">
-         Unser Dropshipping-Service bietet Ihnen die Möglichkeit, ab einer
-         Verpackungseinheit direkt in Ihrem Namen an Ihre Kunden zu liefern –
-         ohne zusätzliche Kosten! Mit über 700 Produkten erweitern Sie Ihr
-         Sortiment ohne Lagerhaltung oder Kapitalbindung. Bestellen Sie erst,
-         wenn Ihre Kunden ordern, und wir übernehmen die Lieferung in Ihrem
-         Namen.
+<div class="flex flex-col xl:flex-row gap-6 text-[var(--light-color-1)] mb-20">
+   <div class="flex flex-col gap-4 mb-2 flex-6">
+      <p class="text-2xl font-bold text-shadow-1">
+         {{ 'dropshipping-headline' | translate }}
       </p>
-      <p class="text-lg leading-6">
-         Dieser effiziente Vertriebsweg verkürzt Transportwege, senkt Logistik-
-         und Lagerkosten. Unsere Lösung ermöglicht eine vollautomatische
-         Bestellabwicklung, unkompliziert per EDI im XML-Format.
-      </p>
+      <div class="flex flex-col md:flex-row xl:flex-col gap-8">
+         <p class="text-lg leading-6">
+            {{ 'dropshipping-main-text-1' | translate }}
+         </p>
+         <p class="text-lg leading-6">
+            {{ 'dropshipping-main-text-2' | translate }}
+         </p>
+      </div>
    </div>
 
-   <p class="text-2xl font-bold text-shadow-1 mb-2">Die Vorteile:</p>
-   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 text-shadow-1">
-      <div class="bg-[var(--dark-color-3)] p-5 box-shadow-tw-lg text-center">
-         <b class="text-[var(--main-color)] text-xl">Preiswert</b>
-         <p>Niedrige Einstiegs- und Folgekosten</p>
-      </div>
+   <div class="flex-6">
+      <p class="text-2xl font-bold text-shadow-1 mb-2">
+         {{ 'dropshipping-benefits' | translate }}
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-shadow-1">
+         <div class="bg-[var(--dark-color-3)] p-5 box-shadow-tw-lg text-center">
+            <b class="text-[var(--main-color)] text-xl">
+               {{ 'dropshipping-benefit-head-1' | translate }}
+            </b>
+            <p>
+               {{ 'dropshipping-benefit-text-1' | translate }}
+            </p>
+         </div>
 
-      <div class="bg-[var(--dark-color-3)] p-5 box-shadow-tw-lg text-center">
-         <b class="text-[var(--main-color)] text-xl">700 Artikel </b>
-         <p>Erweitern sie Ihr Sortiment</p>
-      </div>
+         <div class="bg-[var(--dark-color-3)] p-5 box-shadow-tw-lg text-center">
+            <b class="text-[var(--main-color)] text-xl">
+               {{ 'dropshipping-benefit-head-2' | translate }}
+            </b>
+            <p>
+               {{ 'dropshipping-benefit-text-2' | translate }}
+            </p>
+         </div>
 
-      <div class="bg-[var(--dark-color-3)] p-5 box-shadow-tw-lg text-center">
-         <b class="text-[var(--main-color)] text-xl"
-            >Keine Mindestbestellmenge</b
-         >
-         <p>Bestellen schon ab einer Verpackungseinheit</p>
-      </div>
+         <div class="bg-[var(--dark-color-3)] p-5 box-shadow-tw-lg text-center">
+            <b class="text-[var(--main-color)] text-xl">
+               {{ 'dropshipping-benefit-head-3' | translate }}
+            </b>
+            <p>
+               {{ 'dropshipping-benefit-text-3' | translate }}
+            </p>
+         </div>
 
-      <div class="bg-[var(--dark-color-3)] p-5 box-shadow-tw-lg text-center">
-         <b class="text-[var(--main-color)] text-xl">Sonderanfertigungen </b>
-         <p>Auf Wunsch erhältlich!</p>
+         <div class="bg-[var(--dark-color-3)] p-5 box-shadow-tw-lg text-center">
+            <b class="text-[var(--main-color)] text-xl">
+               {{ 'dropshipping-benefit-head-4' | translate }}
+            </b>
+            <p>
+               {{ 'dropshipping-benefit-text-4' | translate }}
+            </p>
+         </div>
       </div>
    </div>
 </div>

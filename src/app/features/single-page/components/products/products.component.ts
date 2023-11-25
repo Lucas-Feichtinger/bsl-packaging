@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common'
 import { ScrollAnimationDirective } from '../../../../directives/scroll-animation.directive'
 import { IntersectionObserverDirective } from '../../../../directives/intersection-observer.directive'
 import { LaserLineComponent } from '../../../../components/laser-line'
+import { TranslateModule } from '@ngx-translate/core'
+
 @Component({
    standalone: true,
    imports: [
@@ -12,7 +14,7 @@ import { LaserLineComponent } from '../../../../components/laser-line'
       ScrollAnimationDirective,
       IntersectionObserverDirective,
       LaserLineComponent,
-      // Directives
+      TranslateModule,
    ],
    selector: 'app-products',
    templateUrl: './products.component.html',

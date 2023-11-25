@@ -1,19 +1,18 @@
 <!-- Container for demo purpose -->
-<div class="my-4 md:px-6 flex justify-center">
+<div class="flex justify-center mb-20">
    <!-- Section: Design Block -->
    <section
-      class="container rounded-lg mb-20 p-6 mx-6 bg-[var(--dark-color-1)] text-[var(--light-color-1)] text-shadow-1 box-shadow-tw">
+      class="container box-shadow-tw-lg bg-[var(--dark-color-3)] text-[var(--light-color-1)] text-shadow-1">
       <form
-         class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-8 w-full md:mb-0 md:px-3 lg:px-6"
+         class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-8 w-full p-8 lg:p-6"
          [formGroup]="FormData"
          (ngSubmit)="sendEmail()">
          <div>
-            <h2 class="mb-4 text-3xl font-bold">Kontakt aufnehmen</h2>
+            <h2 class="mb-4 text-3xl font-bold text-[var(--main-color)]">
+               {{ 'contact-headline' | translate }}
+            </h2>
             <p class="mb-4">
-               Sie haben Fragen zu unseren Produkten oder Interesse an
-               maßgeschneiderten Verpackungslösungen? Schicken Sie uns einfach
-               eine Nachricht, und wir melden uns schnellstmöglich bei Ihnen
-               zurück.
+               {{ 'contact-text' | translate }}
             </p>
             <p class="mb-2 hidden sm:block">
                Sain-Junien-Straße 25, 90530 Wendelstein
@@ -23,7 +22,7 @@
          </div>
 
          <div class="order-2">
-            <b>Kontaktdaten:</b>
+            <b>{{ 'contact-data' | translate }}</b>
             <div class="relative mb-6">
                <input
                   formControlName="firm"
@@ -36,7 +35,7 @@
                   [class.focused]="FormData.get('firm')?.value"
                   class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] transition-all duration-200 ease-out peer-focus:-translate-y-[1.5rem] peer-focus:scale-[0.8] peer-focus:text-[var(--light-color-1)] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
                   for="FromControlFirma"
-                  >Firma
+                  >{{ 'contact-firm' | translate }}
                </label>
             </div>
 
@@ -52,7 +51,7 @@
                   [class.focused]="FormData.get('name')?.value"
                   class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] transition-all duration-200 ease-out peer-focus:-translate-y-[1.5rem] peer-focus:scale-[0.8] peer-focus:text-[var(--light-color-1)] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
                   for="FromControlName"
-                  >Name
+                  >{{ 'contact-name' | translate }}
                </label>
             </div>
 
@@ -68,14 +67,14 @@
                   [class.focused]="FormData.get('email')?.value"
                   class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] transition-all duration-200 ease-out peer-focus:-translate-y-[1.5rem] peer-focus:scale-[0.8] peer-focus:text-[var(--light-color-1)] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
                   for="FromControlEmail"
-                  >Email address
+                  >{{ 'contact-email' | translate }}
                </label>
             </div>
          </div>
 
          <div class="lg:row-span-2">
             <!-- BEG: Product Section -->
-            <b>Produkt:</b>
+            <b>{{ 'contact-product' | translate }}:</b>
             <div class="flex flex-row gap-3">
                <div class="relative mb-6 flex-10">
                   <input
@@ -89,7 +88,7 @@
                      [class.focused]="FormData.get('product')?.value"
                      class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] transition-all duration-200 ease-out peer-focus:-translate-y-[1.5rem] peer-focus:scale-[0.8] peer-focus:text-[var(--light-color-1)] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
                      for="FromControlProduct"
-                     >Produkt
+                     >{{ 'contact-product' | translate }}
                   </label>
                </div>
 
@@ -105,13 +104,13 @@
                      [class.focused]="FormData.get('amount')?.value"
                      class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] transition-all duration-200 ease-out peer-focus:-translate-y-[1.5rem] peer-focus:scale-[0.8] peer-focus:text-[var(--light-color-1)] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
                      for="FromControlAmount"
-                     >Stk.
+                     >{{ 'contact-amount' | translate }}
                   </label>
                </div>
             </div>
             <!-- END: Product Section -->
 
-            <b>Anschrift:</b>
+            <b> {{ 'contact-address' | translate }}</b>
             <div class="relative mb-6">
                <input
                   formControlName="road"
@@ -124,7 +123,7 @@
                   [class.focused]="FormData.get('road')?.value"
                   class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] transition-all duration-200 ease-out peer-focus:-translate-y-[1.5rem] peer-focus:scale-[0.8] peer-focus:text-[var(--light-color-1)] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
                   for="FromControlRoad"
-                  >Straße
+                  >{{ 'contact-street' | translate }}
                </label>
             </div>
 
@@ -141,7 +140,7 @@
                      [class.focused]="FormData.get('plz')?.value"
                      class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] transition-all duration-200 ease-out peer-focus:-translate-y-[1.5rem] peer-focus:scale-[0.8] peer-focus:text-[var(--light-color-1)] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
                      for="FromControlPLZ"
-                     >Postleitzahl
+                     >{{ 'contact-street' | translate }}
                   </label>
                </div>
 
@@ -157,7 +156,7 @@
                      [class.focused]="FormData.get('city')?.value"
                      class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] transition-all duration-200 ease-out peer-focus:-translate-y-[1.5rem] peer-focus:scale-[0.8] peer-focus:text-[var(--light-color-1)] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
                      for="FromControlStadt"
-                     >Stadt
+                     >{{ 'contact-city' | translate }}
                   </label>
                </div>
             </div>
@@ -174,7 +173,7 @@
                   [class.focused]="FormData.get('message')?.value"
                   for="FormControlMessage"
                   class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] transition-all duration-200 ease-out peer-focus:-translate-y-[1.5rem] peer-focus:scale-[0.8] peer-focus:text-[var(--light-color-1)] peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
-                  >Message</label
+                  >{{ 'contact-message' | translate }}</label
                >
             </div>
          </div>
@@ -197,7 +196,7 @@
             <button
                type="submit"
                class="mb-6 inline-block w-full rounded bg-[var(--dark-color-2)] px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-[var(--dark-color-2)]">
-               Send
+               {{ 'contact-send' | translate }}
             </button>
          </div>
       </form>

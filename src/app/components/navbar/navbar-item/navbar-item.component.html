@@ -1,10 +1,9 @@
 <!-- navbar-item.component.html -->
-<div
-   class="lg:bg-[var(--dark-color-2)] mb-4 pl-4 lg:mb-0 lg:p-2 lg:ml-5 lg:mr-5">
-   <a
-      [routerLink]="link"
-      class="block w-full p-0 lg:px-2 underline decoration-1 underline-offset-1 font-semibold">
-      <i [class]="iconClass"></i>
-      <span class="pl-2">{{ text }}</span>
-   </a>
-</div>
+<a
+   (click)="scrollToSection(link)"
+   class="block w-full bg-[var(--dark-color-3)] p-4 border-l-2 border-[var(--text-color-1)] font-semibold">
+   <i
+      [class]="iconClass"
+      class="my-auto pl-2 fa-solid fa-box-open text-[var(--main-color)]"></i>
+   <span class="pl-2 font-bold text-shadow-1 p-4">{{ text }}</span>
+</a>

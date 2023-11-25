@@ -1,10 +1,12 @@
-<div class="block text-[var(--light-color-1)] px-6 py-6 md:py-16 md:px-12">
-   <div class="mb-2 grid gap-x-6 grid-cols-2 lg:grid-cols-2">
+<div class="block text-[var(--light-color-1)] py-6 md:py-16">
+   <div class="grid gap-x-4 grid-cols-2 lg:grid-cols-2">
       <div>
-         <h1 class="text-2xl font-bold text-shadow-1">Unser Katalog</h1>
+         <h1 class="text-2xl font-bold text-shadow-1">
+            {{ 'catalog-headline' | translate }}
+         </h1>
          <div>
             <p class="text-lg leading-6">
-               Finde die richtige Verpackung für deine Bedürfnisse:
+               {{ 'catalog-text' | translate }}
             </p>
             <button
                (click)="openPdfInNewTab()"
@@ -13,7 +15,7 @@
             </button>
          </div>
       </div>
-      <div class="p-1 flex flex-row">
+      <div class="flex flex-row">
          <div class="flex-1">
             <div class="catalog box-shadow-tw-lg"></div>
          </div>

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core'
+import { Component, ElementRef, ViewChild, inject } from '@angular/core'
 import { ActivatedRoute, RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
 import { CatalogComponent } from '../components/catalog/catalog.component'
@@ -8,6 +8,9 @@ import { NavbarComponent } from '../../../components/navbar/navbar.component'
 import { ContactComponent } from '../components'
 import { ProductsComponent } from '../components/products/products.component'
 import { TranslateModule } from '@ngx-translate/core'
+import { ScrollService } from 'src/app/services/scroll.service'
+import { Subscription } from 'rxjs'
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop'
 
 @Component({
    standalone: true,
@@ -29,4 +32,23 @@ import { TranslateModule } from '@ngx-translate/core'
 })
 export class SingeltonComponent {
    public route = inject(ActivatedRoute)
+   private scrollService = inject(ScrollService)
+
+   private $scrollSubscription = this.scrollService.sectionToScroll$
+      .pipe(takeUntilDestroyed())
+      .subscribe((section) => {
+         // Perform scrolling logic based on the received section identifier
+         const sectionElement = document.getElementById(section)
+
+         if (sectionElement) {
+            sectionElement.scrollIntoView({
+               behavior: 'smooth',
+               block: 'start',
+            })
+         }
+      })
+
+   scrollToSection(): void {
+      this.scrollService.scrollTo('contactSection')
+   }
 }

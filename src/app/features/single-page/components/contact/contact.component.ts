@@ -5,8 +5,9 @@ import { ScrollAnimationDirective } from '../../../../directives/scroll-animatio
 import { IntersectionObserverDirective } from '../../../../directives/intersection-observer.directive'
 import { LaserLineComponent } from '../../../../components/laser-line'
 import { FormGroup, ReactiveFormsModule, FormBuilder } from '@angular/forms'
-import { Carousel, Dropdown, initTE } from 'tw-elements'
+import { initTE } from 'tw-elements'
 import { EmailService } from 'src/app/services/email.service'
+import { TranslateModule } from '@ngx-translate/core'
 
 @Component({
    standalone: true,
@@ -17,6 +18,7 @@ import { EmailService } from 'src/app/services/email.service'
       IntersectionObserverDirective,
       LaserLineComponent,
       ReactiveFormsModule,
+      TranslateModule,
    ],
    selector: 'app-contact',
    templateUrl: './contact.component.html',

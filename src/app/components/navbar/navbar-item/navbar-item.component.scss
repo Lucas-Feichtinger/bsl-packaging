@@ -1,0 +1,14 @@
+:host {
+   a {
+      text-decoration: none;
+   }
+
+   a:hover {
+      background: linear-gradient(
+         to right,
+         var(--dark-color-2) 0%,
+         var(--dark-color-2) 70%,
+         var(--dark-color-3) 100%
+      );
+   }
+}
