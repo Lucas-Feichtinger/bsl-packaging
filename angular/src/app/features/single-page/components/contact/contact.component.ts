@@ -8,6 +8,7 @@ import { FormGroup, ReactiveFormsModule, FormBuilder } from '@angular/forms'
 import { initTE } from 'tw-elements'
 import { EmailService } from 'src/app/services/email.service'
 import { TranslateModule } from '@ngx-translate/core'
+import { MailService } from 'src/app/webservices/email.webservice'
 
 @Component({
    standalone: true,
@@ -26,9 +27,10 @@ import { TranslateModule } from '@ngx-translate/core'
 })
 export class ContactComponent implements OnInit {
    public FormData!: FormGroup
-   public showProductSection: boolean = false
+   public showProductSection = false
    private emailService = inject(EmailService)
    private readonly formBuilder = inject(FormBuilder)
+   private readonly mailService = inject(MailService)
 
    ngOnInit(): void {
       this.buildForm()
@@ -51,18 +53,7 @@ export class ContactComponent implements OnInit {
 
    sendEmail() {
       if (this.FormData.valid) {
-         this.emailService.sendEmail(this.FormData).subscribe(
-            () => {
-               // Email sent successfully, you can handle the success here
-               console.log('Email sent!')
-               // Optionally, you can reset the form after sending the email
-               this.FormData.reset()
-            },
-            (error) => {
-               // Handle error if the email fails to send
-               console.error('Error sending email:', error)
-            }
-         )
+         this.mailService.sendMail(this.FormData)
       }
    }
 }
