@@ -6,11 +6,20 @@ const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 
 const app = express();
 
-// Serve Angular files from the 'public' folder
-app.use(express.static(path.join(__dirname, 'public')));
+// Define the absolute path to the 'public' folder
+const publicPath = path.join(__dirname, '../public');
 
-app.get('/', (req, res) => {
-  res.send({ message: 'Hello API' });
+// Serve static files from the 'public' directory
+app.use(express.static(publicPath));
+
+// handling CORS
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
 });
 
 app.listen(port, host, () => {
