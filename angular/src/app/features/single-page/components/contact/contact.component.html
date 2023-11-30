@@ -1,16 +1,16 @@
 <!-- Container for demo purpose -->
-<div class="flex justify-center mb-20">
+<div class="box-shadow-tw-lg bg-[var(--dark-color-3)] mt-32 mb-20">
    <!-- Section: Design Block -->
-   <section
-      class="container box-shadow-tw-lg bg-[var(--dark-color-3)] text-[var(--light-color-1)] text-shadow-1">
+   <section class="text-[var(--light-color-1)] text-shadow-1 p-8">
+      <h6
+         class="text-shadow-1 mb-4 text-3xl font-bold text-[var(--main-color)]">
+         {{ 'contact-headline' | translate }}
+      </h6>
       <form
-         class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-8 w-full p-8 lg:p-6"
+         class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-8 w-full"
          [formGroup]="FormData"
          (ngSubmit)="sendEmail()">
          <div>
-            <h2 class="mb-4 text-3xl font-bold text-[var(--main-color)]">
-               {{ 'contact-headline' | translate }}
-            </h2>
             <p class="mb-4">
                {{ 'contact-text' | translate }}
             </p>

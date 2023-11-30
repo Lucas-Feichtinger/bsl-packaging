@@ -70,10 +70,11 @@
    </div>
 </nav>
 
+@if (navbarState) {
 <div
-   *ngIf="navbarState"
    (click)="toggleNavbar()"
    class="overlay backdrop-blur-sm"></div>
+}
 
 <div class="desktop-hidden">
    <nav

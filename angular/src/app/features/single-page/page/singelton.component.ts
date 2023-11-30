@@ -1,4 +1,12 @@
-import { AfterViewInit, Component, inject, signal } from '@angular/core'
+import {
+   AfterViewInit,
+   Component,
+   afterRender,
+   inject,
+   signal,
+} from '@angular/core'
+import { trigger, state, style, animate, transition } from '@angular/animations'
+
 import { ActivatedRoute, RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
 import { CatalogComponent } from '../components/catalog/catalog.component'
@@ -28,11 +36,30 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop'
    selector: 'app-singelton',
    templateUrl: './singelton.component.html',
    styleUrls: ['./singelton.component.scss'],
+   animations: [
+      trigger('fillBackground', [
+         state(
+            'initial',
+            style({
+               backgroundPosition: 'right',
+            })
+         ),
+         state(
+            'final',
+            style({
+               backgroundPosition: 'left',
+            })
+         ),
+         transition(
+            'initial => final',
+            animate('1s cubic-bezier(0.42, 0, 0.58, 1)')
+         ),
+      ]),
+   ],
 })
 export class SingeltonComponent implements AfterViewInit {
    public route = inject(ActivatedRoute)
    private scrollService = inject(ScrollService)
-   public didLoad = signal(false)
 
    private $scrollSubscription = this.scrollService.sectionToScroll$
       .pipe(takeUntilDestroyed())
@@ -52,9 +79,14 @@ export class SingeltonComponent implements AfterViewInit {
       this.scrollService.scrollTo('contactSection')
    }
 
+   public didLoad = signal('initial') // Ensure it's a string value indicating the initial state
+
+   // ... rest of your component code
+
    ngAfterViewInit() {
+      // Optionally, change the state after a delay
       setTimeout(() => {
-         this.didLoad.set(true)
-      }, 100)
+         this.didLoad.set('final')
+      }, 800) // Adjust the time as needed
    }
 }

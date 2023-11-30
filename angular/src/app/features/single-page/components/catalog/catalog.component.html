@@ -1,22 +1,22 @@
-<div class="block text-[var(--light-color-1)] py-6 md:py-16">
-   <div class="grid gap-x-4 grid-cols-2 lg:grid-cols-2">
-      <div>
-         <h1 class="text-2xl font-bold text-shadow-1">
+<div class="block text-[var(--light-color-1)] mt-32">
+   <div class="grid gap-x-8 grid-cols-1 md:grid-cols-2">
+      <div class="text-center md:text-left md:order-2">
+         <h3 class="text-3xl font-bold text-shadow-1">
             {{ 'catalog-headline' | translate }}
-         </h1>
+         </h3>
          <div>
             <p class="text-lg leading-6">
                {{ 'catalog-text' | translate }}
             </p>
             <button
                (click)="openPdfInNewTab()"
-               class="contact-button p-2 font-bold text-lg mt-3 box-shadow-tw-lg">
+               class="contact-button p-2 font-bold text-lg my-4 box-shadow-tw-lg">
                {{ 'catalog' | translate }}
             </button>
          </div>
       </div>
-      <div class="flex flex-row">
-         <div class="flex-1">
+      <div class="flex flex-row justify-center md:justify-end">
+         <div class="">
             <div class="catalog box-shadow-tw-lg"></div>
          </div>
       </div>

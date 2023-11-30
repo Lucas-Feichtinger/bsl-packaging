@@ -12,13 +12,13 @@
                <div class="flex-1">
                   <div class="flex items-center flex-col">
                      <h1
-                        class="text-3xl text-shadow bg-dark-bg"
-                        [attr.data-loaded]="didLoad()">
+                        class="p-1 text-3xl text-shadow bg-dark-bg"
+                        [@fillBackground]="didLoad()">
                         BSL-Packaging
                      </h1>
                      <p
-                        class="text-xl mb-4 text-shadow bg-dark-bg"
-                        [attr.data-loaded]="didLoad()">
+                        class="p-1 text-xl mb-4 text-shadow bg-dark-bg"
+                        [@fillBackground]="didLoad()">
                         There is not a thing without Packaging.
                      </p>
                      <button
@@ -37,7 +37,7 @@
 </div>
 
 <div class="flex flex-col items-center">
-   <div class="px-[8%]">
+   <div class="px-[8%] md:px-[12%] lg:px-[20%] xl:px-[24%]">
       <app-products id="productsSection"></app-products>
       <app-catalog id="catalogSection"></app-catalog>
       <app-dropshipping id="dropshippingSection"></app-dropshipping>

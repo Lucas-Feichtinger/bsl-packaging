@@ -1,116 +1,37 @@
-<!-- https://tailwind-elements.com/docs/standard/navigation/footer/ -->
-
 <!-- Footer container -->
-<footer
-   class="bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
+<footer class="bg-neutral-600 text-neutral-200">
    <!-- Main container div: holds the entire content of the footer, including four sections (Tailwind Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. -->
-   <div class="mx-6 py-10 text-center md:text-left">
-      <div class="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-         <!-- Products section -->
-         <!-- <div class="">
-            <h6
-               class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-               Products
-            </h6>
-            <p class="mb-4">
+   <div class="mx-4 py-5">
+      <div class="flex flex-col items-center justify-center">
+         <p class="mb-2 font-semibold text-lg">
+            {{ 'contact' | translate }}
+         </p>
+         <p class="mb-2 font-semibold text-lg">BSL Packaging</p>
+         <p class="mb-2">
+            <a
+               target="_blank"
+               href="https://maps.google.com/?q=Sain-Junien-Straße 25, 90530 Wendelstein">
                <a
-                  href="#!"
-                  class="text-neutral-600 dark:text-neutral-200"
-                  >Angular</a
-               >
-            </p>
-            <p class="mb-4">
-               <a
-                  href="#!"
-                  class="text-neutral-600 dark:text-neutral-200"
-                  >React</a
-               >
-            </p>
-            <p class="mb-4">
-               <a
-                  href="#!"
-                  class="text-neutral-600 dark:text-neutral-200"
-                  >Vue</a
-               >
-            </p>
-            <p>
-               <a
-                  href="#!"
-                  class="text-neutral-600 dark:text-neutral-200"
-                  >Laravel</a
-               >
-            </p>
-         </div> -->
-         <!-- Useful links section -->
-         <!-- <div class="">
-            <h6
-               class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-               Useful links
-            </h6>
-            <p class="mb-4">
-               <a
-                  href="#!"
-                  class="text-neutral-600 dark:text-neutral-200"
-                  >Pricing</a
-               >
-            </p>
-            <p class="mb-4">
-               <a
-                  href="#!"
-                  class="text-neutral-600 dark:text-neutral-200"
-                  >Settings</a
-               >
-            </p>
-            <p class="mb-4">
-               <a
-                  href="#!"
-                  class="text-neutral-600 dark:text-neutral-200"
-                  >Orders</a
-               >
-            </p>
-            <p>
-               <a
-                  href="#!"
-                  class="text-neutral-600 dark:text-neutral-200"
-                  >Help</a
-               >
-            </p>
-         </div> -->
-         <!-- Contact section -->
-         <div>
-            <h6
-               class="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-               Contact
-            </h6>
-            <p class="mb-4 flex items-center justify-center md:justify-start">
-               BSL Packaging
-            </p>
-            <p class="mb-4 flex items-center justify-center md:justify-start">
-               <a
-                  href="https://maps.google.com/?q=Sain-Junien-Straße 25, 90530 Wendelstein">
-                  <a
-                     href="https://maps.apple.com/maps?q=Sain-Junien-Straße 25, 90530 Wendelstein">
-                     Sain-Junien-Straße 25, 90530 Wendelstein</a
-                  ></a
-               >
-            </p>
-            <p class="mb-4 flex items-center justify-center md:justify-start">
-               <a href="mailto:info@bslpackaging.com"
-                  >info&#64;bslpackaging.com</a
-               >
-            </p>
-            <p class="mb-4 flex items-center justify-center md:justify-start">
-               <a href="tel:+4991291437258">+49 9129 143 72 58</a>
-            </p>
-            <p class="flex items-center justify-center md:justify-start">
-               <a href="tel:+4917643664263">+49 176 436 642 63</a>
-            </p>
-         </div>
+                  target="_blank"
+                  href="https://maps.apple.com/maps?q=Sain-Junien-Straße 25, 90530 Wendelstein">
+                  Sain-Junien-Straße 25, 90530 Wendelstein</a
+               ></a
+            >
+         </p>
+         <p class="mb-2">
+            <a href="mailto:info@bslpackaging.com">info&#64;bslpackaging.com</a>
+         </p>
+         <p class="mb-2">
+            <a href="tel:+4991291437258">+49 9129 143 72 58</a>
+         </p>
+         <p class="flex">
+            <a href="tel:+4917643664263">+49 176 436 642 63</a>
+         </p>
       </div>
    </div>
 
    <!--Copyright section-->
-   <div class="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
+   <div class="bg-neutral-200 p-2 text-center dark:bg-neutral-700">
       <span>© 2023 Copyright:</span>
       <span class="font-semibold text-neutral-600 dark:text-neutral-400">
          BSL-Packaging

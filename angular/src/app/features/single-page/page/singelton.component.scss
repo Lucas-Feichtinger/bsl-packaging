@@ -60,19 +60,4 @@
       )
       right;
    background-size: 200%;
-   animation: fillBackground 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-   animation-play-state: paused; /* Initially pause the animation */
-
-   &[data-loaded='true'] {
-      animation-play-state: running; /* Start the animation when data is loaded */
-   }
-}
-
-@keyframes fillBackground {
-   0% {
-      background-position: right;
-   }
-   100% {
-      background-position: left;
-   }
 }
