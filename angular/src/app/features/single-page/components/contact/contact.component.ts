@@ -9,6 +9,7 @@ import { initTE } from 'tw-elements'
 import { EmailService } from 'src/app/services/email.service'
 import { TranslateModule } from '@ngx-translate/core'
 import { MailService } from 'src/app/webservices/email.webservice'
+import { EmailIFace } from 'src/app/interfaces'
 
 @Component({
    standalone: true,
@@ -53,7 +54,19 @@ export class ContactComponent implements OnInit {
 
    sendEmail() {
       if (this.FormData.valid) {
-         this.mailService.sendMail(this.FormData)
+         const formValues: EmailIFace = {
+            name: this.FormData.get('name')?.value,
+            firm: this.FormData.get('firm')?.value,
+            product: this.FormData.get('product')?.value,
+            amount: this.FormData.get('amount')?.value,
+            road: this.FormData.get('road')?.value,
+            plz: this.FormData.get('plz')?.value,
+            city: this.FormData.get('city')?.value,
+            email: this.FormData.get('email')?.value,
+            message: this.FormData.get('message')?.value,
+         }
+
+         this.mailService.sendMail(formValues)
       }
    }
 }

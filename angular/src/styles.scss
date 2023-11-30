@@ -1,4 +1,5 @@
 @import url('./input.css');
+@import url('./fonts.scss');
 @import url('./app/styles/theme.scss');
 /* Font Awsome Icons */
 @import url('./assets/font-awesome/css/fontawesome.min.css');
@@ -9,6 +10,7 @@ body,
 html {
    margin: 0;
    padding: 0;
+   font-family: 'k2d';
 }
 
 .text-shadow {
@@ -72,4 +74,9 @@ a {
    .desktop-hidden {
       display: none;
    }
+}
+
+h1 {
+   margin-bottom: 1rem;
+   letter-spacing: -1px;
 }

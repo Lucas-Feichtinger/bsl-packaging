@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, inject } from '@angular/core'
+import { AfterViewInit, Component, inject, signal } from '@angular/core'
 import { ActivatedRoute, RouterModule } from '@angular/router'
 import { CommonModule } from '@angular/common'
 import { CatalogComponent } from '../components/catalog/catalog.component'
@@ -9,7 +9,6 @@ import { ContactComponent } from '../components'
 import { ProductsComponent } from '../components/products/products.component'
 import { TranslateModule } from '@ngx-translate/core'
 import { ScrollService } from 'src/app/services/scroll.service'
-import { Subscription } from 'rxjs'
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop'
 
 @Component({
@@ -30,9 +29,10 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop'
    templateUrl: './singelton.component.html',
    styleUrls: ['./singelton.component.scss'],
 })
-export class SingeltonComponent {
+export class SingeltonComponent implements AfterViewInit {
    public route = inject(ActivatedRoute)
    private scrollService = inject(ScrollService)
+   public didLoad = signal(false)
 
    private $scrollSubscription = this.scrollService.sectionToScroll$
       .pipe(takeUntilDestroyed())
@@ -50,5 +50,11 @@ export class SingeltonComponent {
 
    scrollToSection(): void {
       this.scrollService.scrollTo('contactSection')
+   }
+
+   ngAfterViewInit() {
+      setTimeout(() => {
+         this.didLoad.set(true)
+      }, 100)
    }
 }

@@ -7,26 +7,28 @@
          <div class="flex flex-col justify-between w-full h-full">
             <app-navbar> </app-navbar>
 
-            <div class="flex flex-row">
-               <div
-                  class="flex-1 box-shadow-tw-lg bg-[var(--main-color-40)] p-4 backdrop-blur-[20px] box-shadow test">
-                  <div class="overflow text-left p-3">
-                     <h1 class="text-3xl font-bold text-shadow">
+            <div
+               class="flex-1 flex flex-row font-[azo] font-light items-center">
+               <div class="flex-1">
+                  <div class="flex items-center flex-col">
+                     <h1
+                        class="text-3xl text-shadow bg-dark-bg"
+                        [attr.data-loaded]="didLoad()">
                         BSL-Packaging
                      </h1>
-                     <p class="my-2 text-xl text-shadow">
+                     <p
+                        class="text-xl mb-4 text-shadow bg-dark-bg"
+                        [attr.data-loaded]="didLoad()">
                         There is not a thing without Packaging.
                      </p>
+                     <button
+                        (click)="scrollToSection()"
+                        class="contact-button p-2 font-semibold text-lg box-shadow-tw-lg">
+                        {{ 'contact' | translate }}
+                     </button>
                   </div>
                </div>
                <div class="flex-1"></div>
-            </div>
-            <div class="w-full text-center px-3 pb-5">
-               <button
-                  (click)="scrollToSection()"
-                  class="contact-button p-2 font-bold text-lg box-shadow-tw-lg">
-                  {{ 'contact' | translate }}
-               </button>
             </div>
          </div>
       </div>

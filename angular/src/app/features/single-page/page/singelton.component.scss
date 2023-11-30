@@ -43,5 +43,36 @@
 }
 
 .test {
-   max-width: 60%;
+   background: rgb(31, 32, 33);
+   background: linear-gradient(
+      163deg,
+      rgba(31, 32, 33, 0.5) 27%,
+      rgba(216, 215, 201, 0) 100%
+   );
+}
+
+.bg-dark-bg {
+   display: inline-block;
+   background: linear-gradient(
+         to left,
+         rgba(0, 0, 0, 0) 50%,
+         var(--dark-color-2) 50%
+      )
+      right;
+   background-size: 200%;
+   animation: fillBackground 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+   animation-play-state: paused; /* Initially pause the animation */
+
+   &[data-loaded='true'] {
+      animation-play-state: running; /* Start the animation when data is loaded */
+   }
+}
+
+@keyframes fillBackground {
+   0% {
+      background-position: right;
+   }
+   100% {
+      background-position: left;
+   }
 }
